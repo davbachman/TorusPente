@@ -1,0 +1,1 @@
+{"mode":"playing","torus":{"majorRadius":20,"minorRadius":10,"uCells":16,"vCells":8},"currentPlayer":1,"winner":0,"gameOver":false,"vOffset":0,"zRotation":0,"occupiedCells":[],"coordinateNote":"u goes around the torus center ring; v goes around each tube cross-section."}

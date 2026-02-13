@@ -1,0 +1,96 @@
+:root {
+  --bg-a: #d8ccb8;
+  --bg-b: #e9ddd0;
+  --hud-bg: rgba(33, 24, 18, 0.78);
+  --hud-text: #f6f0e7;
+  --accent: #c5792f;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Avenir Next', 'Gill Sans', 'Trebuchet MS', sans-serif;
+  background:
+    radial-gradient(circle at 20% 15%, #efe8de 0%, transparent 42%),
+    linear-gradient(155deg, var(--bg-a), var(--bg-b));
+  color: #1d1712;
+  overflow: hidden;
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#viewport {
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+canvas:active {
+  cursor: grabbing;
+}
+
+#hud {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 0.75rem;
+  background: var(--hud-bg);
+  color: var(--hud-text);
+  box-shadow: 0 0.8rem 1.8rem rgba(0, 0, 0, 0.22);
+  min-width: 240px;
+}
+
+#turn-indicator {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+#winner-banner {
+  font-size: 0.95rem;
+  color: #ffe8cf;
+}
+
+#restart-btn {
+  justify-self: start;
+  border: none;
+  border-radius: 0.55rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--accent);
+  color: #1f160f;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#restart-btn:hover {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 720px) {
+  #hud {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    min-width: 0;
+  }
+}
