@@ -87,3 +87,12 @@ Original prompt: Build and validate a two-player torus-surface Pente game in Van
 - Rebalanced shared directional lighting to preserve highlight readability without separate board-only lights.
 - Verified screenshot: `output/web-game/shared-light-shiny-board.png`.
 - Re-ran `npm run test` and `npm run build` successfully.
+
+## Board finish retune
+- Reduced board shininess to a milder satin finish (higher roughness + lower clearcoat intensity).
+- Adjusted board color to a balanced warm tan selected to keep high contrast with:
+  - black grid circles
+  - white and black stones
+  - gold winning-cell highlight overlay
+- Verified screenshot: `output/web-game/board-less-shiny-balanced-color.png`.
+- Re-ran `npm run test` and `npm run build` successfully.

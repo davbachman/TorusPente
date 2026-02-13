@@ -67,11 +67,11 @@ export class TorusBoard {
 
     const torusGeometry = new THREE.TorusGeometry(MAJOR_RADIUS, MINOR_RADIUS, 90, 180);
     const torusMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0xe8cb8a,
-      roughness: 0.56,
+      color: 0xe2c38f,
+      roughness: 0.66,
       metalness: 0.0,
-      clearcoat: 0.62,
-      clearcoatRoughness: 0.22,
+      clearcoat: 0.4,
+      clearcoatRoughness: 0.32,
       side: THREE.DoubleSide
     });
     this.baseMesh = new THREE.Mesh(torusGeometry, torusMaterial);
