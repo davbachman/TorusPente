@@ -48,7 +48,7 @@ canvas:active {
 #hud {
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  right: 1rem;
   display: grid;
   gap: 0.5rem;
   padding: 0.8rem 0.95rem;
@@ -63,6 +63,12 @@ canvas:active {
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.01em;
+}
+
+#control-instructions {
+  font-size: 0.84rem;
+  line-height: 1.35;
+  color: #e9dece;
 }
 
 #winner-banner {
