@@ -158,7 +158,7 @@ export function createGame() {
       winningCells: state.winningCells,
       occupiedCells: getOccupiedCells(),
       coordinateNote:
-        'u goes around the torus center ring; v goes around each tube cross-section.'
+        'u goes around the torus center ring; v goes around each tube cross-section; stones are placed on grid intersections.'
     };
     return JSON.stringify(payload);
   };

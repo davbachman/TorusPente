@@ -96,3 +96,13 @@ Original prompt: Build and validate a two-player torus-surface Pente game in Van
   - gold winning-cell highlight overlay
 - Verified screenshot: `output/web-game/board-less-shiny-balanced-color.png`.
 - Re-ran `npm run test` and `npm run build` successfully.
+
+## Intersection placement update
+- Changed stone placement model from square centers to grid intersections.
+- Updated torus coordinate mapping so piece and win-highlight meshes are positioned at:
+  - `u = i * stepU`
+  - `v = j * stepV + vOffset`
+- Updated picking logic to snap to nearest intersection index (rounded quantization) instead of flooring to cell regions.
+- Updated coordinate note text and docs to reflect intersection-based placement.
+- Verified with screenshot: `output/web-game/intersection-placement.png`.
+- Re-ran `npm run test` and `npm run build` successfully.

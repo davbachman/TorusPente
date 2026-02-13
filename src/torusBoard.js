@@ -17,6 +17,15 @@ const HIGHLIGHT_RADIUS = 2.95;
 const HIGHLIGHT_SURFACE_OFFSET = 0.27;
 const UP_VECTOR = new THREE.Vector3(0, 0, 1);
 
+function wrapIndex(value, size) {
+  const wrapped = value % size;
+  return wrapped < 0 ? wrapped + size : wrapped;
+}
+
+function nearestIntersectionIndex(angle, step, count) {
+  return wrapIndex(Math.round(angle / step), count);
+}
+
 function torusPoint(u, v) {
   const cosV = Math.cos(v);
   const ringRadius = MAJOR_RADIUS + MINOR_RADIUS * cosV;
@@ -217,8 +226,8 @@ export class TorusBoard {
   }
 
   positionPiece(mesh, i, j) {
-    const u = (i + 0.5) * this.cellStepU;
-    const v = (j + 0.5) * this.cellStepV + this.vOffset;
+    const u = i * this.cellStepU;
+    const v = j * this.cellStepV + this.vOffset;
 
     const point = torusPoint(u, v);
     const normal = torusNormal(u, v);
@@ -271,8 +280,8 @@ export class TorusBoard {
   }
 
   positionHighlight(mesh, i, j) {
-    const u = (i + 0.5) * this.cellStepU;
-    const v = (j + 0.5) * this.cellStepV + this.vOffset;
+    const u = i * this.cellStepU;
+    const v = j * this.cellStepV + this.vOffset;
 
     const point = torusPoint(u, v);
     const normal = torusNormal(u, v);
@@ -338,9 +347,9 @@ export class TorusBoard {
     const radial = Math.hypot(localPoint.x, localPoint.y);
     const v = normalizeAngle(Math.atan2(localPoint.z, radial - MAJOR_RADIUS));
 
-    const i = Math.floor(u / this.cellStepU) % U_CELLS;
+    const i = nearestIntersectionIndex(u, this.cellStepU, U_CELLS);
     const vBoard = normalizeAngle(v - this.vOffset);
-    const j = Math.floor(vBoard / this.cellStepV) % V_CELLS;
+    const j = nearestIntersectionIndex(vBoard, this.cellStepV, V_CELLS);
 
     return { i, j, u, v };
   }

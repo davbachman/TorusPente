@@ -45,9 +45,9 @@ This file is a full technical handoff for future agents working in this reposito
 
 ## Game rules implemented
 - Board topology: torus (wrap-around on both axes)
-- Grid: `16 x 8 = 128` cells
+- Grid: `16 x 8 = 128` intersections
 - Turn order: Player 1 (white) then Player 2 (black)
-- Placement: double-click on a cell
+- Placement: double-click near an intersection; picking snaps to the nearest intersection
 - Illegal moves: occupied cell and post-win moves are blocked
 - Win condition: 5 contiguous stones in any of 4 directions:
 1. meridional `(1,0)`
@@ -63,7 +63,7 @@ This file is a full technical handoff for future agents working in this reposito
 ## Controls implemented
 - Double-click (left button): place stone
 - Left-button drag horizontal (`dx`): rotate torus object around central axis (`zRotation`)
-- Left-button drag vertical (`dy`): update `vOffset` (cell layout rotation around tube cross-section)
+- Left-button drag vertical (`dy`): update `vOffset` (intersection lattice rotation around tube cross-section)
 - Vertical drag is currently inverted in `src/main.js` (`-dy` multiplier)
 - Drag suppression for double-click placement uses:
 1. threshold `DRAG_THRESHOLD_PX = 4`
@@ -88,7 +88,7 @@ This file is a full technical handoff for future agents working in this reposito
 1. `x = (R + r*cos(v)) * cos(u)`
 2. `y = (R + r*cos(v)) * sin(u)`
 3. `z = r*sin(v)`
-- Cell indexing:
+- Intersection indexing:
 1. `i` from `u`
 2. `j` from `vBoard = normalize(v - vOffset)`
 
@@ -150,7 +150,7 @@ This file is a full technical handoff for future agents working in this reposito
 - `src/torusBoard.js`:
 1. scene/camera/lights creation
 2. board mesh and grid line generation
-3. raycast hit to cell conversion
+3. raycast hit to nearest intersection conversion
 4. piece mesh lifecycle (add/update/remove)
 5. winning highlight mesh lifecycle
 
