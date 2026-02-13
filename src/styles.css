@@ -45,10 +45,10 @@ canvas:active {
   cursor: grabbing;
 }
 
-#hud {
+#turn-hud {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  left: 1rem;
   display: grid;
   gap: 0.5rem;
   padding: 0.8rem 0.95rem;
@@ -66,9 +66,18 @@ canvas:active {
 }
 
 #control-instructions {
-  font-size: 0.84rem;
-  line-height: 1.35;
-  color: #e9dece;
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.62rem 0.95rem;
+  border-radius: 0.7rem;
+  background: rgba(33, 24, 18, 0.62);
+  color: #efe6d8;
+  font-size: 0.88rem;
+  line-height: 1.3;
+  text-align: center;
+  box-shadow: 0 0.65rem 1.5rem rgba(0, 0, 0, 0.18);
 }
 
 #winner-banner {
@@ -92,11 +101,13 @@ canvas:active {
 }
 
 @media (max-width: 720px) {
-  #hud {
-    top: auto;
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
+  #turn-hud {
     min-width: 0;
+    max-width: calc(100vw - 2rem);
+  }
+
+  #control-instructions {
+    font-size: 0.8rem;
+    padding: 0.55rem 0.75rem;
   }
 }
