@@ -1,5 +1,7 @@
 Web link: https://davbachman.github.io/TorusPente/
 
+Designed in collaboration with Laura Taalman
+
 Instructions for use:
 1. Open the web link above.
 2. Double-click near an intersection of the black circles to place a stone.
