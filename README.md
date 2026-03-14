@@ -2,6 +2,10 @@ Web link: https://davbachman.github.io/TorusPente/
 
 Designed in collaboration with Laura Taalman
 
+Created by David Bachman with GPT-5 Codex
+
+To learn more about David Bachman and his work visit https://pzacad.pitzer.edu/~dbachman/ and subscribe to his AI substack *Entropy Bonus* at profbachman.substack.com
+
 Instructions for use:
 1. Open the web link above.
 2. Double-click near an intersection of the black circles to place a stone.
